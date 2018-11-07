@@ -17,6 +17,7 @@ public class Train1 {
 
 	/**
 	 * @param args
+	 * 比较运算符运算
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

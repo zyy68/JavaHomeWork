@@ -28,81 +28,106 @@ public class HomeTrain {
 		printSanJiaoXing();
 		
 		//第（3）题 菱形图形
-//		printLingTu();
-//		LingTu();
+		printLingTu();
+		LingTu(6);
 		
 //		第（5）题 输出对称三角形数字图形
-//		printDuiChenSanJiao();
+		printDuiChenSanJiao();
 		
 		
 		
 		//第（6）题 东方之门
-//		printDongFangGate();
+		printDongFangGate();
 		
 		//第（7）题 杨辉三角形
-//		printYangHui();
+		printYangHui();
 		
 //		第2题 101-500之间所有的奇数之和
-//		jiSum();
+		System.out.println("\n");
+		jiSum();
+		System.out.println("\n");
 		
 //		第3题 100-200之间不能被3整除的数
-//		printIsNotThree();
+		printIsNotThree();
 		
 		//第4题 输入初值，输出该数之后100个不能被3整除的数；
 //		Scanner scanner = new Scanner(System.in);
 //		int num = scanner.nextInt();
-//		inputNumFind3(num);
+		inputNumFind3(5);//num1=5
 		
 //		第5题 S=1+（1+2）+（1+2+3）+...+(1+2+...+n) 求s的值
 //		Scanner scanner2 = new Scanner(System.in);
 //		int num2 = scanner2.nextInt();
-//		printNSum(num2);	
+		printNSum(13);	//num2=13
 		
 //		第7题 S=11*22*33*...*nn,求S不大于400000时的最大n
-//		findN();
+		findN();
 		
 //		第9题 百鸡问题
-//		resolveCharect();
+		resolveCharect();
 		
 		//第10题 ,统计一个班学生0-9,10-19,..90-99及100各分数段的人数.
-//		countScort();
+		countScort();
 		
 		//第11题，插入法升序排序
-//		insertArray();
+		insertArray();
 		
 		//第12题，（归并排序） 将两个有序的数组归并成一个数组，且按照升序的方式排序
 //		mergeArray();
 	
+		//第13题 运动员成绩排名
+//		double a[] ={2.12,4.3,4.6,9.5,8.8,7.5};
+//		sortArray(a);
+//		for(double i:a){
+//			System.out.print(i+"\t");
+//		}
+		
+		
 
 	}
 	
-//	static void mergeArray(){
-//		//归并排序
-//		int a[] = {1,12,23,44,65,96};//6
-//		int b[] = {12,23,24,25,46,57,57,78,79,100};
-//		
-//		int len=a.length+b.length;
-//		int c[] = new int[len];
-//		
-//		int index=0;
-//		for(int j=0;j<a.length;j++){
-//			for(int k=0;k<b.length;k++){
-//				if(a[j]<b[j]){
-//					c[index]=a[j];
-//					index++;
-//				}else {
-//					c[index]=b[k];
-//					index++;
-//				}
-//			}
-//		}
-//	
-//		
-//		for(int v:c){
-//			System.out.print(" "+v);
-//		}
-//		
-//	}
+	static void sortArray(double[] arr){
+		double temp;
+		for(int i=0;i<arr.length;i++){//选择第一个待比较的数字（为了不露，进行顺序选择）
+			for(int j=i+1;j<arr.length;j++){//选择剩下的数中的第二个和第一个数做比较
+				//当第二个数较小的时候，交换位置，直到该位置上的数是整个数组中的元素最小值的时候，循环结束，进行下一趟数字比较）
+				if(arr[i]>arr[j]){
+					temp = arr[j];
+					arr[j] = arr[i];
+					arr[i] = temp;
+				}
+			}
+		}
+		//没有返回值
+	}
+	
+	static void mergeArray(){
+		//归并排序
+		int a[] = {1,12,23,44,65,96};//6
+		int b[] = {12,23,24,25,46,57,57,78,79,100};
+		
+		int len=a.length+b.length;
+		int c[] = new int[len];
+		
+		int index=0;
+		for(int j=0;j<a.length;j++){
+			for(int k=0;k<b.length;k++){
+				if(a[j]<b[j]){
+					c[index]=a[j];
+					index++;
+				}else {
+					c[index]=b[k];
+					index++;
+				}
+			}
+		}
+	
+		
+		for(int v:c){
+			System.out.print(" "+v);
+		}
+		
+	}
 //	
 	static void insertArray(){
 		//插入排序，先确定第一个数，然后确定含有两个数的排序位置，接下来再确定第三个
@@ -330,22 +355,7 @@ public class HomeTrain {
 		}
 				
 		
-		
-		/**
-		 *      *
-		 *	   *
-		 *    *
-		 * */
-//		for(int i = 1;i<=5;i++){//控制上半段
-//			for(int j=1;j<=5;j++){//输出上面的*号
-//				if(j+i==6)
-//					System.out.print("*");
-//				System.out.print(" ");
-//				
-//			}
-//			System.out.println();
-//		}
-//		
+			
 	}
 	
 	static void printDongFangGate(){

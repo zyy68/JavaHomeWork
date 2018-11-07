@@ -9,6 +9,8 @@
  */
 package com.课上练习.train1;
 
+import java.util.Scanner;
+
 /**
  * @author sylvia.zhao
  *
@@ -20,20 +22,25 @@ public class LessonTrain {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//第（1）题 画星号
-//		printTu();
-		//第二题 列出数字三角形
-//		printShuZiTu();
-		
-		//第三题
-//		findNum();
-//		第四题 找出同购数
+//第一题 画星号
+		printTu();
+		System.out.println("\n");
+//第二题 列出数字三角形
+		printShuZiTu();
+		System.out.println("\n");
+//第三题 猜数字
+		findNum();
+		System.out.println("\n");
+//第四题 找出同购数
 		findTongGou();
+		System.out.println("\n");
+//第五题 三目运算
+		sanMu();
 		
 		
 		
 	}
-	
+	//输出星号图案
 	static void printTu(){
 		System.out.println("第（1）题 画星号");
 		for(int i = 1;i<=4;i++){
@@ -54,7 +61,7 @@ public class LessonTrain {
 		}
 		System.out.println("\n\n");
 	}
-	
+	//输出数字三角形
 	static void printShuZiTu(){
 		System.out.println("第（4）题 数字三角形");
 //		for(int i=2;i<9;i++){
@@ -105,6 +112,72 @@ public class LessonTrain {
 			
 			
 		}
+	}
+	
+	static void sanMu(){
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("please input your score");
+		int score,count;
+		score = count =0;
+		score = sc.nextInt();
+		
+		//判断score等级
+		char result = score >= 90?'A' :(score>=80?'B':(score>=70?'C':(score>=60?'D':'E')));
+		System.out.println(result);
+		
+		if(score>=90){
+			System.out.println('A');
+		}else {
+			if(score>=80){
+				System.out.println('B');
+			}else {
+				if (score>=70) {
+					System.out.println('C');
+				}else {
+					if(score>=60){
+						System.out.println('D');
+					}else {
+						System.out.println('E');
+					}
+				}
+			}
+		}
+		
+		
+		if(score>=90){
+			System.out.println('A');
+		}else if (score>=80) {
+			System.out.println('B');
+		}else if (score>=70) {
+			System.out.println('C');
+		}else if (score>=60) {
+			System.out.println('D');
+		}else {
+			System.out.println('E');
+		}
+		
+		int num = score/10 ;
+		System.out.println(num);
+		switch (num) {
+		case 9:
+			System.out.println('A');
+			break;
+		case 8:
+			System.out.println('B');
+			break;
+		case 7:
+			System.out.println('C');
+			break;
+		case 6:
+			System.out.println('D');
+			break;
+		default:
+			System.out.println('E');
+			break;
+		}
+		
+		//24h
 	}
 }
 
