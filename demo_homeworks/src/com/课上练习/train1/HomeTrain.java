@@ -23,7 +23,7 @@ public class HomeTrain {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
+		/*
 		//第（2）题 打印正倒三角⭐图形
 		printSanJiaoXing();
 		
@@ -38,10 +38,10 @@ public class HomeTrain {
 		
 		//第（6）题 东方之门
 		printDongFangGate();
-		
+		*/
 		//第（7）题 杨辉三角形
-		printYangHui();
-		
+//		printYangHui();
+		/*
 //		第2题 101-500之间所有的奇数之和
 		System.out.println("\n");
 		jiSum();
@@ -62,10 +62,10 @@ public class HomeTrain {
 		
 //		第7题 S=11*22*33*...*nn,求S不大于400000时的最大n
 		findN();
-		
+		*/
 //		第9题 百鸡问题
 		resolveCharect();
-		
+		/*
 		//第10题 ,统计一个班学生0-9,10-19,..90-99及100各分数段的人数.
 		countScort();
 		
@@ -82,7 +82,7 @@ public class HomeTrain {
 //			System.out.print(i+"\t");
 //		}
 		
-		
+		*/
 
 	}
 	
@@ -219,11 +219,18 @@ public class HomeTrain {
 		int gongNum=0,muNum=0,xiaoNum=0;//个数
 		
 //		gongNum+muNum+xiaoNum
-		for(int i=1;i<20;i++){//公鸡数量
+		for(int i=0;i<20;i++){//公鸡数量
 			for(int j=0;j<34;j++){//母鸡数量
-				for(int k=0;k<100;k++){//小鸡组数（3个一组是一钱）
-					if(i*5+j*3+k==100 && i+j+3*k==100){
-						System.out.println("\n\n百钱买百鸡\n其中鸡翁："+i+"只；\n鸡母:"+j+"只；\n鸡雏:"+3*k+"只。");
+//				for(int k=0;k<100;k++){//小鸡组数（3个一组是一钱）
+//					if(i*5+j*3+k==100 && i+j+3*k==100){
+//						System.out.println("\n\n百钱买百鸡\n其中鸡翁："+i+"只；\n鸡母:"+j+"只；\n鸡雏:"+3*k+"只。");
+//					}
+//				}
+				
+				//买小鸡总是三个一起买
+				for(int k=0;k<100;k+=3){
+					if(i+j+k==100 && i*5+j*3+k/3==100){
+						System.out.println("\n\n百钱买百鸡\n其中鸡翁："+i+"只；\n鸡母:"+j+"只；\n鸡雏:"+k+"只。");					
 					}
 				}
 			}
@@ -416,18 +423,37 @@ public class HomeTrain {
 	static void printYangHui(){//------------------------------------
 		//数组做
 		System.out.println("第（7）题 杨辉三角形");
-		System.out.println("    1");
-		for(int i=1;i<=4;i++){
-//			if(i==1){//如果是第二行的1 1直接放值
-//				
-//			}else {
-				for(int j=1;j<5;j++){
-					if(i==1){
-						System.out.print("   1 1");
-					}
+		int num=7;//杨辉三角形的行数
+		int[][] yangHui=new int[num][num];//声明数组用于存放运行的结果位置
+		
+		yangHui[0][0]=1;
+		yangHui[1][0] = yangHui[1][1] = 1;
+		
+		for(int i=2;i<yangHui.length;i++){
+						
+			for(int j=1;j<=i;j++){
+//				[2][1]=[1][1]+[1][0]
+				if(j==0 || j==i){
+					yangHui[i][j]=yangHui[i][0]=1;
 				}
-//			}
+				yangHui[i][j]=yangHui[i-1][j-1]+yangHui[i-1][j];
+			}
+		}
+		
+		//输出杨辉三角形--遍历数组
+		for(int i=0;i<yangHui.length;i++){
+			//输出空格
+			for(int k=yangHui.length-1;k>i;k--){
+				System.out.print(" ");
+			}
 			
+			
+			//输出数值
+			for(int j=0;j<yangHui.length;j++){
+				if(yangHui[i][j]!=0)
+					System.out.print(+yangHui[i][j]+" ");
+			}
+			System.out.println();
 		}
 	}
 	

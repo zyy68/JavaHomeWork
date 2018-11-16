@@ -35,7 +35,7 @@ public class LessonTrain {
 		findTongGou();
 		System.out.println("\n");
 //第五题 三目运算
-		sanMu();
+//		sanMu();
 		
 		
 		
@@ -97,11 +97,13 @@ public class LessonTrain {
 	}
 
 	
-	//4找同构数
-	static void findTongGou(){
+	//4找同构数 方法一
+	static void findTongGou1(){
+		
 		System.out.println("第8题 找1-1000内的所有同构数");
 		String qaString = "";
 		String hou = "";
+		
 		
 		for(int i=1 ;i<1000;i++){
 			qaString = String.valueOf(i*i);
@@ -111,6 +113,35 @@ public class LessonTrain {
 			}
 			
 			
+		}
+	}
+	//方法二
+	static void findTongGou(){
+		int result=0;
+		boolean flag=false;
+		for(int i=1;i<=1000;i++){
+			if(i == i*i%1000 || i==i*i%100 || i==i*i%10){
+				System.out.println(i*i+" 的同构数是：  "+i);
+			}
+//			result=i*i;//平方后的结果
+//			if(result>1000){
+//				break;
+//			}
+			
+//			if(i<10 && i%10==result%10 ){
+//				flag=true;
+////				System.out.println(result+"的同构数是"+i);
+//			}else if(i<100 && i%100==result%100){
+//				flag=true;
+//			}else if(i<1000 &&i%1000==result%1000){
+//				flag=true;
+////				System.out.println(result+"的同构数是"+i);
+//			}
+//				
+//			if(flag){
+//				
+//			}
+//			flag=false;
 		}
 	}
 	

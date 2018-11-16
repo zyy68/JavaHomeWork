@@ -18,6 +18,10 @@ import java.util.Scanner;
  * ***
  * ****
  * *****
+ * /第一题打印星号
+	第一题 打印星号，135排列
+	第三题 杨辉三角形
+//		
  */
 public class PrintXing {
 
