@@ -9,6 +9,7 @@
  */
 package com.课上练习.train1;
 
+import java.awt.Stroke;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
@@ -30,12 +31,23 @@ public class CutNumber {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("请输入一个小数：");
 		num = scanner.nextDouble();
-		zheng = (int)num;//得到整数部分
-		wei = num - zheng;//得到小数部分
-		DecimalFormat decimalFormat = new DecimalFormat("0.00");
+		String strNum = String.valueOf(num);//将输入的小数转换成字符串
+		String a[] = new String[2];
+		a=strNum.split("\\.");
+//		System.out.println();
+		System.out.println("输入的小数是"+num+"\n整数部分是："+a[0]+"\n小数部分是：0."+a[1]);
+		
+		
+		
+		
+//		zheng = (int)num;//得到整数部分
+//		wei = num - zheng;//得到小数部分
+//		System.out.println(String.format("%.2f", wei));
+		
+//		DecimalFormat decimalFormat = new DecimalFormat("0.00");
 		
 //		String string = Double.toString(wei);
-		System.out.println("输入的小数是"+num+"\n整数部分是："+zheng+"\n小数部分是："+decimalFormat.format(wei));
+//		System.out.println("输入的小数是"+num+"\n整数部分是："+zheng+"\n小数部分是：0."+decimalFormat.format(wei));
 		
 
 	}
